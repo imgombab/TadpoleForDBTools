@@ -170,7 +170,7 @@ public class DBInfoCommentEditorSupport extends EditingSupport {
 					logger.debug("query is " + query.toString());
 
 				stmt = javaConn.prepareStatement(query.toString());
-				stmt.executeQuery();
+				stmt.execute();
 
 			} else if (DBDefine.getDBDefine(userDB.getDbms_types()) == DBDefine.MSSQL_8_LE_DEFAULT) {
 				query.append(" exec sp_dropextendedproperty 'Caption' ").append(", 'user' ,").append(userDB.getUsers());
